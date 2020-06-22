@@ -20,8 +20,6 @@ var wrapper = ds_map_create();
 ds_map_add_list(wrapper, "root", root);
 
 var json_string = json_encode(wrapper);
-var file = file_text_open_write(global.file);
-file_text_write_string(file, json_string);
-file_text_close(file);
+save_json(global.file, json_string)
 
 ds_map_destroy(wrapper);

@@ -2,10 +2,7 @@ with(oRoom_rect) instance_destroy();
 
 if(file_exists(global.file)) {
 	
-	var file = file_text_open_read(global.file)
-	var wrapper = file_text_read_string(file)
-	wrapper = json_decode(wrapper);
-	file_text_close(file);
+	var wrapper = load_json(global.file)
 	
 	var root = wrapper[? "root"];
 	
